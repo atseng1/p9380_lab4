@@ -1,4 +1,4 @@
-install.packages("RPostgres")
+## install.packages("RPostgres")
 require(RPostgres)
 
 conn = dbConnect(RPostgres::Postgres(), dbname = 'advanced_gis', 
@@ -28,8 +28,8 @@ plot(prop_sub$x, prop_sub$y)
 
 head(prop_sub, n=10)
 
-install.packages("gstat")
-install.packages("sp")
+## install.packages("gstat")
+## install.packages("sp")
 require(gstat)
 require(sp)
 
@@ -66,7 +66,7 @@ proj4string(grid) = proj4string(prop_sub)
 pr_sq_ft_idw = gstat::idw(pr_sq_ft~1, prop_sub, newdata=grid,
                            idp=2.0)
 
-install.packages("rasterVis")
+## install.packages("rasterVis")
 require(raster)
 raster = raster(pr_sq_ft_idw)
 plot(raster)
